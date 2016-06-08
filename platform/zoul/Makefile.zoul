@@ -12,6 +12,11 @@ endif
 PYTHON = python
 BSL_FLAGS += -e -w -v
 
+# Backward compatibility with Z1
+ifdef MOTES
+  PORT = $(MOTES)
+endif
+
 ifdef PORT
   BSL_FLAGS += -p $(PORT)
 endif
